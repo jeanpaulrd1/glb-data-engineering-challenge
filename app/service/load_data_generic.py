@@ -16,7 +16,7 @@ class GenericService():
                 df = util.apply_datetime_format(df, "hired_date")
             if fileName != '':
                 df.to_sql(table_name, con=engine, if_exists='append', index=False, chunksize= 1000)
-                response_object = response_object = {
+                response_object = {
                     'status':'sucess',
                     'message':f'{table_name} data loaded successfully.'
                 }

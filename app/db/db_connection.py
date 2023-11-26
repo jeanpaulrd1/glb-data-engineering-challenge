@@ -7,5 +7,5 @@ class MySQLConnection():
             engine = create_engine(connection_string)
             return engine
         except Exception as e:
-             raise Exception("Database connection error")
+             raise Exception("Database connection error:"+ str(e))
         

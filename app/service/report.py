@@ -21,5 +21,5 @@ class ReportService():
                 'message':'An error ocurred: ' + str(e) 
             }
             return response_object, 400
-        finally:
-            engine.dispose()
+        #finally:
+            #engine.dispose()
