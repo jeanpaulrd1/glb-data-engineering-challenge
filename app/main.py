@@ -8,6 +8,13 @@ app = Flask(__name__)
 # enable debugging mode
 app.config["DEBUG"] = True
 
+@app.route("/", methods=['GET'])
+def Index():
+      response_object = {
+                    'status':'sucess',
+                    'message':'Testing'
+                }
+      return response_object
 
 @app.route("/jobs/load-data", methods=['POST'])
 def jobsLoadData():
@@ -36,17 +43,17 @@ def hiredEmployeesLoadData():
       response = employee.loadData(file,col_names,table_name)
       return response
 
-@app.route("/jobs/hires_per_quarter", methods=['GET'])
+@app.route("/reports/hires-per-quarter", methods=['GET'])
 def hiresPerQuarter():
       hiresPerQuarter = ReportService()
-      response = hiresPerQuarter.readData("db\scripts\hires_per_quarter_2021.sql")
+      response = hiresPerQuarter.readData("db//scripts//hires_per_quarter_2021.sql")
       return response
 
-@app.route("/jobs/departments_mean_hires", methods=['GET'])
+@app.route("/reports/departments-mean-hires", methods=['GET'])
 def departmentsMeanHires():
       hiresPerQuarter = ReportService()
-      response = hiresPerQuarter.readData("db\scripts\departments_mean_hires_2021.sql")
+      response = hiresPerQuarter.readData("db//scripts//departments_mean_hires_2021.sql")
       return response
 
 if (__name__ == "__main__"):
-     app.run(port = 5001)
+     app.run(host='0.0.0.0', port = 5000)
