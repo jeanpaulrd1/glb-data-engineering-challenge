@@ -18,7 +18,6 @@ It has 3 tables: hired_employees, departments and jobs. Table hired_employees ha
 ## API Rest
 A Docker image was generated and then pushed to AWS LightSail.
 It has 5 methods:
-https://glb-api-rest-service.iavds3kkig434.us-east-1.cs.amazonlightsail.com/
 ### POST
 - /jobs/load-data
 - /departments/load-data
